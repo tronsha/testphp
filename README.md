@@ -7,4 +7,5 @@ Test PHP
     cd testphp
     curl -s http://getcomposer.org/installer | php
     php composer.phar install
-
+    ./vendor/bin/phpunit
+    
