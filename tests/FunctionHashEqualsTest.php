@@ -6,6 +6,9 @@
  */
 class FunctionHashEqualsTest extends PHPUnit_Framework_TestCase
 {
+    /**
+     * @requires PHP 5.6
+     */
     public function testFunctionHashEquals()
     {
         if (version_compare(phpversion(), '5.6.0', '>=') === true) {

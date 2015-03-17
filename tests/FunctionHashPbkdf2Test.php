@@ -6,6 +6,9 @@
  */
 class FunctionHashPbkdf2Test extends PHPUnit_Framework_TestCase
 {
+    /**
+     * @requires PHP 5.5
+     */
     public function testFunctionHashPbkdf2()
     {
         if (version_compare(phpversion(), '5.5.0', '>=') === true) {

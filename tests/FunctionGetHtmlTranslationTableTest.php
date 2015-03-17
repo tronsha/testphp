@@ -6,6 +6,9 @@
  */
 class FunctionGetHtmlTranslationTableTest extends PHPUnit_Framework_TestCase
 {
+    /**
+     * @requires PHP 5.4
+     */
     public function testFunctionGetHtmlTranslationTable()
     {
         if (version_compare(phpversion(), '5.4.0', '>=') === true) {

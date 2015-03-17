@@ -6,6 +6,9 @@
  */
 class FunctionHashCopyTest extends PHPUnit_Framework_TestCase
 {
+    /**
+     * @requires PHP 5.3
+     */
     public function testFunctionHashCopy()
     {
         if (version_compare(phpversion(), '5.3.0', '>=') === true) {
