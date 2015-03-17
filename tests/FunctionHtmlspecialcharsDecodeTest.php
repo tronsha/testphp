@@ -13,7 +13,7 @@ class FunctionHtmlspecialcharsDecodeTest extends PHPUnit_Framework_TestCase
             $this->assertEquals('<p>this -> "</p>', htmlspecialchars_decode($str));
             $this->assertEquals('<p>this -> &quot;</p>', htmlspecialchars_decode($str, ENT_NOQUOTES));
         } else {
-            $this->markTestIncomplete(phpversion() . ' < 5.1.0');
+            $info = phpversion() . ' < 5.1.0';
         }
     }
 }

@@ -33,7 +33,7 @@ class FunctionExplodeTest extends PHPUnit_Framework_TestCase
         if (version_compare(phpversion(), '5.1.0', '>=') === true) {
             $this->assertEquals(array('one', 'two', 'three'), explode('|', $str, -1));
         } else {
-            $this->markTestIncomplete(phpversion() . ' < 5.1.0');
+            $info = phpversion() . ' < 5.1.0';
         }
     }
 }

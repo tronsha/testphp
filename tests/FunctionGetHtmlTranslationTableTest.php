@@ -19,7 +19,7 @@ class FunctionGetHtmlTranslationTableTest extends PHPUnit_Framework_TestCase
             $this->assertEquals('&percnt;', $array['%']);
             $this->assertEquals('&amp;', $array['&']);
         } else {
-            $this->markTestIncomplete(phpversion() . ' < 5.4.0');
+            $this->markTestSkipped(phpversion() . ' < 5.4.0');
         }
     }
 }

@@ -18,7 +18,7 @@ class FunctionHashEqualsTest extends PHPUnit_Framework_TestCase
             $this->assertTrue(hash_equals($expected, $correct));
             $this->assertFalse(hash_equals($expected, $incorrect));
         } else {
-            $this->markTestIncomplete(phpversion() . ' < 5.6.0');
+            $this->markTestSkipped(phpversion() . ' < 5.6.0');
         }
     }
 }

@@ -18,7 +18,7 @@ class FunctionHashPbkdf2Test extends PHPUnit_Framework_TestCase
             $hash = hash_pbkdf2("sha256", $password, $salt, $iterations, 20);
             $this->assertEquals(20, strlen($hash));
         } else {
-            $this->markTestIncomplete(phpversion() . ' < 5.5.0');
+            $this->markTestSkipped(phpversion() . ' < 5.5.0');
         }
     }
 }

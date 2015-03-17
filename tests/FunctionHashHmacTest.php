@@ -11,7 +11,7 @@ class FunctionHashHmacTest extends PHPUnit_Framework_TestCase
         if (version_compare(phpversion(), '5.1.2', '>=') === true) {
             $this->assertEquals('b8e7ae12510bdfb1812e463a7f086122cf37e4f7',  hash_hmac('ripemd160', 'The quick brown fox jumped over the lazy dog.', 'secret'));
         } else {
-            $this->markTestIncomplete(phpversion() . ' < 5.1.2');
+            $info = phpversion() . ' < 5.1.2';
         }
     }
 }

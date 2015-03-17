@@ -21,7 +21,7 @@ class FunctionLcfirstTest extends PHPUnit_Framework_TestCase
             $bar = lcfirst(strtoupper($bar));
             $this->assertEquals('hELLO WORLD!', $bar);
         } else {
-            $this->markTestIncomplete(phpversion() . ' < 5.3.0');
+            $this->markTestSkipped(phpversion() . ' < 5.3.0');
         }
     }
 }
