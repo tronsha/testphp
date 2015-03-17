@@ -20,6 +20,8 @@ class FunctionHashFileTest extends PHPUnit_Framework_TestCase
     {
         if (version_compare(phpversion(), '5.1.2', '>=') === true) {
             $this->assertEquals('5c6ffbdd40d9556b73a21e63c3e0e904', hash_file('md5', 'example.txt'));
+        } else {
+            $this->markTestIncomplete(phpversion() . ' < 5.1.2');
         }
     }
 }

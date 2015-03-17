@@ -10,6 +10,8 @@ class FunctionHashAlgosTest extends PHPUnit_Framework_TestCase
     {
         if (version_compare(phpversion(), '5.1.2', '>=') === true) {
             $this->assertTrue(in_array('md5', hash_algos()));
+        } else {
+            $this->markTestIncomplete(phpversion() . ' < 5.1.2');
         }
     }
 }

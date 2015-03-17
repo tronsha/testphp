@@ -14,6 +14,8 @@ class FunctionHashEqualsTest extends PHPUnit_Framework_TestCase
             $incorrect = crypt('apple', '$2a$07$usesomesillystringforsalt$');
             $this->assertTrue(hash_equals($expected, $correct));
             $this->assertFalse(hash_equals($expected, $incorrect));
+        } else {
+            $this->markTestIncomplete(phpversion() . ' < 5.6.0');
         }
     }
 }

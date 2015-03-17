@@ -10,6 +10,8 @@ class FunctionHex2binTest extends PHPUnit_Framework_TestCase
     {
         if (version_compare(phpversion(), '5.4.0', '>=') === true) {
             $this->assertEquals('example hex data', hex2bin("6578616d706c65206865782064617461"));
+        } else {
+            $this->markTestIncomplete(phpversion() . ' < 5.4.0');
         }
     }
 }

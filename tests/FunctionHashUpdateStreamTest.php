@@ -15,6 +15,8 @@ class FunctionHashUpdateStreamTest extends PHPUnit_Framework_TestCase
             $ctx = hash_init('md5');
             hash_update_stream($ctx, $fp);
             $this->assertEquals('5c6ffbdd40d9556b73a21e63c3e0e904', hash_final($ctx));
+        } else {
+            $this->markTestIncomplete(phpversion() . ' < 5.1.2');
         }
     }
 }
