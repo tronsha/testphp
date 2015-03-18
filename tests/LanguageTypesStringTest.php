@@ -16,8 +16,10 @@ class LanguageTypesStringTest extends PHPUnit_Framework_TestCase
         $this->assertEquals('He drank some purple juice.', "He drank some $juices[koolaid1] juice.");
         $people = new people();
         $this->assertEquals('John Smith drank some apple juice.', "$people->john drank some $juices[0] juice.");
-        $this->assertEquals('John Smith then said hello to Jane Smith.', "$people->john then said hello to $people->jane.");
-        $this->assertEquals('John Smith\'s wife greeted Robert Paulsen.', "$people->john's wife greeted $people->robert.");
+        $this->assertEquals('John Smith then said hello to Jane Smith.',
+            "$people->john then said hello to $people->jane.");
+        $this->assertEquals('John Smith\'s wife greeted Robert Paulsen.',
+            "$people->john's wife greeted $people->robert.");
     }
 
     public function testLanguageTypesStringComplexSyntax()

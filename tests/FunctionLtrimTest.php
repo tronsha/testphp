@@ -10,7 +10,7 @@ class FunctionLtrimTest extends PHPUnit_Framework_TestCase
     {
         $text = "\t\tThese are a few words :) ...  ";
         $binary = "\x09Example string\x0A";
-        $hello  = "Hello World";
+        $hello = "Hello World";
         $this->assertEquals('These are a few words :) ...  ', ltrim($text));
         $this->assertEquals('These are a few words :) ...  ', ltrim($text, " \t."));
         $this->assertEquals('o World', ltrim($hello, "Hdle"));
