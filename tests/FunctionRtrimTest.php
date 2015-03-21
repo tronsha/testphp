@@ -14,6 +14,6 @@ class FunctionRtrimTest extends PHPUnit_Framework_TestCase
         $this->assertEquals("\t\t" . 'These are a few words :) ...', rtrim($text));
         $this->assertEquals("\t\t" . 'These are a few words :)', rtrim($text, " \t."));
         $this->assertEquals('Hello Wor', rtrim($hello, "Hdle"));
-        $this->assertEquals("\x09" .  'Example string', rtrim($binary, "\x00..\x1F"));
+        $this->assertEquals("\x09" . 'Example string', rtrim($binary, "\x00..\x1F"));
     }
 }
