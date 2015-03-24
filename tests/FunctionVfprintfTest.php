@@ -10,7 +10,7 @@ class FunctionVfprintfTest extends PHPUnit_Framework_TestCase
 
     protected function setUp()
     {
-        $this->fp = fopen('date.txt', 'w');
+        $this->fp = fopen('example.txt', 'w');
         if (false === $this->fp) {
             $this->markTestSkipped('fopen fails');
         }
@@ -18,7 +18,7 @@ class FunctionVfprintfTest extends PHPUnit_Framework_TestCase
 
     protected function tearDown()
     {
-        unlink('date.txt');
+        unlink('example.txt');
     }
 
     public function testFunctionFprintf()
@@ -27,6 +27,6 @@ class FunctionVfprintfTest extends PHPUnit_Framework_TestCase
         $month = 4;
         $day = 28;
         vfprintf($this->fp, "%04d-%02d-%02d", array($year, $month, $day));
-        $this->assertEquals('1979-04-28', file_get_contents('date.txt'));
+        $this->assertEquals('1979-04-28', file_get_contents('example.txt'));
     }
 }
