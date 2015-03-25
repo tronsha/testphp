@@ -6,7 +6,7 @@
  */
 class FunctionLtrimTest extends PHPUnit_Framework_TestCase
 {
-    public function testFunctioLtrim()
+    public function testFunctionLtrim()
     {
         $text = "\t\tThese are a few words :) ...  ";
         $binary = "\x09Example string\x0A";
