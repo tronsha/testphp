@@ -4,6 +4,9 @@
          backupGlobals="false"
          colors="true"
          bootstrap="vendor/autoload.php"
+         convertErrorsToExceptions="true"
+         convertNoticesToExceptions="true"
+         convertWarningsToExceptions="true"
         >
     <php>
         <ini name="error_reporting" value="-1" />
