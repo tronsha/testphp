@@ -8,6 +8,6 @@ class FunctionStrcasecmpTest extends PHPUnit_Framework_TestCase
 {
     public function testFunctionStrcasecmp()
     {
-        $this->assertEquals(0, (strcasecmp("Hello", "hello")));
+        $this->assertEquals(0, strcasecmp("Hello", "hello"));
     }
 }

@@ -8,6 +8,6 @@ class FunctionStrncasecmpTest extends PHPUnit_Framework_TestCase
 {
     public function testFunctionStrncasecmp()
     {
-        $this->assertEquals(0, (strncasecmp("Hello World", "hello world", 10)));
+        $this->assertEquals(0, strncasecmp("Hello World", "hello world", 10));
     }
 }
