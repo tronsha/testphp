@@ -19,5 +19,4 @@ class FunctionSprintfTest extends PHPUnit_Framework_TestCase
         $format = 'The %2$s contains %1$04d monkeys';
         $this->assertEquals('The tree contains 0005 monkeys', sprintf($format, $num, $location));
     }
-
 }
