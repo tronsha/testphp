@@ -2,7 +2,7 @@
 
 /**
  * Class FunctionSscanfTest
- * @link http://php.net/manual/de/function.sscanf.php
+ * @link http://php.net/manual/en/function.sscanf.php
  */
 class FunctionSscanfTest extends PHPUnit_Framework_TestCase
 {
