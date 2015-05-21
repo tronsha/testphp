@@ -2,7 +2,7 @@
 
 /**
  * Class FunctionCeilTest
- * @link http://php.net/manual/de/function.ceil.php
+ * @link http://php.net/manual/en/function.ceil.php
  */
 class FunctionCeilTest extends PHPUnit_Framework_TestCase
 {
