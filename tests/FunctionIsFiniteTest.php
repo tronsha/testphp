@@ -8,7 +8,7 @@ class FunctionIsFiniteTest extends PHPUnit_Framework_TestCase
 {
     public function testFunctionIsFinite()
     {
-        $this->markTestIncomplete();
-        //TODO
+        $this->assertTrue(is_finite(2));
+        $this->assertFalse(is_finite(log(0)));
     }
 }
