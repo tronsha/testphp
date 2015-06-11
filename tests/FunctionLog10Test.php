@@ -8,6 +8,6 @@ class FunctionLog10Test extends PHPUnit_Framework_TestCase
 {
     public function testFunctionLog10()
     {
-        $this->assertEquals(3, log10(1000));
+        $this->assertEquals(3.0, log10(1000));
     }
 }
