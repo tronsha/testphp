@@ -2,7 +2,7 @@
 
 /**
  * Class FunctionMaxTest
- * @link http://php.net/manual/en/function.Max.php
+ * @link http://php.net/manual/en/function.max.php
  */
 class FunctionMaxTest extends PHPUnit_Framework_TestCase
 {
