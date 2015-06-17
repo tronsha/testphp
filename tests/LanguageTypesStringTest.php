@@ -28,7 +28,11 @@ class LanguageTypesStringTest extends PHPUnit_Framework_TestCase
         $bar = 'bar';
         $baz = array('foo', 'bar', 'baz', 'quux');
         $this->assertEquals('I am bar.', "{$foo->$bar}");
-        $this->assertEquals('I am bar.', "{$foo->$baz[1]}");
+        if (version_compare(phpversion(), '7.0.0-dev', '>=') === true) {
+            $this->assertEquals('I am bar.', "{$foo->{$baz[1]}}");
+        } else {
+            $this->assertEquals('I am bar.', "{$foo->$baz[1]}");
+        }
         $rootbeer = 'A & W';
         $ipa = 'Alexander Keith\'s';
         $this->assertEquals('I\'d like an A & W', "I'd like an {${beers::softdrink}}");
