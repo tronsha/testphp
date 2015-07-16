@@ -16,10 +16,12 @@ class FunctionArrayDiffUassocTest extends PHPUnit_Framework_TestCase
     }
 }
 
-function key_compare_func($a, $b)
-{
-    if ($a === $b) {
-        return 0;
+if (function_exists('key_compare_func') === false) {
+    function key_compare_func($a, $b)
+    {
+        if ($a === $b) {
+            return 0;
+        }
+        return ($a > $b) ? 1 : -1;
     }
-    return ($a > $b) ? 1 : -1;
 }
