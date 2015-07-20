@@ -15,6 +15,38 @@ class FunctionArrayFilterTest extends PHPUnit_Framework_TestCase
         $entry = array(0 => 'foo', 1 => false, 2 => -1, 3 => null, 4 => '');
         $this->assertEquals(array(0 => 'foo', 2 => -1), array_filter($entry));
     }
+
+    /**
+     * @requires PHP 5.6
+     */
+    public function testFunctionArrayFilterFlag()
+    {
+        if (version_compare(phpversion(), '5.6.0', '>=') === true) {
+            $arr = ['a' => 1, 'b' => 2, 'c' => 3, 'd' => 4];
+            $this->assertEquals(
+                array('b' => 2),
+                array_filter(
+                    $arr,
+                    function ($k) {
+                        return $k == 'b';
+                    },
+                    ARRAY_FILTER_USE_KEY
+                )
+            );
+            $this->assertEquals(
+                array('b' => 2, 'd' => 4),
+                array_filter(
+                    $arr,
+                    function ($v, $k) {
+                        return $k == 'b' || $v == 4;
+                    },
+                    ARRAY_FILTER_USE_BOTH
+                )
+            );
+        } else {
+            $info = phpversion() . ' < 5.6.0';
+        }
+    }
 }
 
 if (function_exists('odd') === false) {
