@@ -22,7 +22,7 @@ class FunctionArrayFilterTest extends PHPUnit_Framework_TestCase
     public function testFunctionArrayFilterFlag()
     {
         if (version_compare(phpversion(), '5.6.0', '>=') === true) {
-            $arr = ['a' => 1, 'b' => 2, 'c' => 3, 'd' => 4];
+            $arr = array('a' => 1, 'b' => 2, 'c' => 3, 'd' => 4);
             $this->assertEquals(
                 array('b' => 2),
                 array_filter(
