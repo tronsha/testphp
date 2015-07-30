@@ -28,6 +28,21 @@ class FunctionArrayMapTest extends PHPUnit_Framework_TestCase
             $this->markTestSkipped(phpversion() . ' < 5.3.0');
         }
     }
+
+    public function testFunctionArrayLambdaArrayOfArrays()
+    {
+        $a = array(1, 2, 3, 4, 5);
+        $b = array("one", "two", "three", "four", "five");
+        $c = array("uno", "dos", "tres", "cuatro", "cinco");
+        $output = array(
+            0 => array(0 => 1, 1 => 'one', 2 => 'uno'),
+            1 => array(0 => 2, 1 => 'two', 2 => 'dos'),
+            2 => array(0 => 3, 1 => 'three', 2 => 'tres'),
+            3 => array(0 => 4, 1 => 'four', 2 => 'cuatro'),
+            4 => array(0 => 5, 1 => 'five', 2 => 'cinco')
+        );
+        $this->assertEquals($output, array_map(null, $a, $b, $c));
+    }
 }
 
 if (function_exists('cube') === false) {
