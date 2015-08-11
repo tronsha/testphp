@@ -6,7 +6,6 @@
  */
 class FunctionArrayReverseTest extends PHPUnit_Framework_TestCase
 {
-
     public function testFunctionArrayReverse()
     {
         $input = array("php", 4.0, array("green", "red"));
