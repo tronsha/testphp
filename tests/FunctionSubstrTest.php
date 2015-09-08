@@ -42,10 +42,11 @@ class FunctionSubstrTest extends PHPUnit_Framework_TestCase
         $this->assertEquals('1', substr(true, 0, 1));
         if (version_compare(phpversion(), '7.0.0-dev', '>=') === true) {
             $this->assertEquals('', substr(false, 0, 1));
+            $this->assertEquals('', substr("", 0, 1));
         } else {
             $this->assertFalse(substr(false, 0, 1));
+            $this->assertFalse(substr("", 0, 1));
         }
-        $this->assertFalse(substr("", 0, 1));
         $this->assertEquals('1200', substr(1.2e3, 0, 4));
     }
 }
