@@ -28,11 +28,10 @@ class FunctionSubstrTest extends PHPUnit_Framework_TestCase
         $this->assertEquals('abcd', substr('abcdef', 0, 4));
         $this->assertEquals('abcdef', substr('abcdef', 0, 8));
         $this->assertEquals('f', substr('abcdef', -1, 1));
-
         $string = 'abcdef';
-        $this->assertEquals('a',  $string[0]);
-        $this->assertEquals('d',  $string[3]);
-        $this->assertEquals('f',  $string[strlen($string)-1]);
+        $this->assertEquals('a', $string[0]);
+        $this->assertEquals('d', $string[3]);
+        $this->assertEquals('f', $string[strlen($string) - 1]);
     }
 
     public function testFunctionSubstrCastingBehaviour()
@@ -41,14 +40,20 @@ class FunctionSubstrTest extends PHPUnit_Framework_TestCase
         $this->assertEquals('54', substr(54321, 0, 2));
         $this->assertEquals('gr', substr(new apple(), 0, 2));
         $this->assertEquals('1', substr(true, 0, 1));
-        $this->assertFalse(substr(false, 0, 1));
+        if (version_compare(phpversion(), '7.0.0-dev', '>=') === true) {
+            $this->assertEquals('', substr(false, 0, 1));
+        } else {
+            $this->assertFalse(substr(false, 0, 1));
+        }
         $this->assertFalse(substr("", 0, 1));
         $this->assertEquals('1200', substr(1.2e3, 0, 4));
     }
 }
 
-class apple {
-    public function __toString() {
+class apple
+{
+    public function __toString()
+    {
         return "green";
     }
 }
