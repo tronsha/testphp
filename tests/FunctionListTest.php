@@ -21,7 +21,7 @@ class FunctionListTest extends PHPUnit_Framework_TestCase
 
     public function testFunctionListPhp7()
     {
-        list($a[], $a[], $a[]) = [1, 2, 3];
+        list($a[], $a[], $a[]) = array(1, 2, 3);
         if (version_compare(phpversion(), '7.0.0-dev', '>=') === true) {
             $this->assertEquals(1, $a[0]);
             $this->assertEquals(2, $a[1]);
