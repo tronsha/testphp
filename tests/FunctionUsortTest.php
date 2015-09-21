@@ -15,6 +15,18 @@ class FunctionUsortTest extends PHPUnit_Framework_TestCase
             echo "$key: $value\n";
         }
     }
+
+    public function testFunctionUsortClosure()
+    {
+        $array[0] = array('key_a' => 'z', 'key_b' => 'c');
+        $array[1] = array('key_a' => 'x', 'key_b' => 'b');
+        $array[2] = array('key_a' => 'y', 'key_b' => 'a');
+        usort($array, build_sorter('key_b'));
+        $this->expectOutputString("y, a\nx, b\nz, c\n");
+        foreach ($array as $item) {
+            echo $item['key_a'] . ', ' . $item['key_b'] . "\n";
+        }
+    }
 }
 
 if (function_exists('cmp') === false) {
@@ -24,5 +36,14 @@ if (function_exists('cmp') === false) {
             return 0;
         }
         return ($a < $b) ? -1 : 1;
+    }
+}
+
+if (function_exists('build_sorter') === false) {
+    function build_sorter($key)
+    {
+        return function ($a, $b) use ($key) {
+            return strnatcmp($a[$key], $b[$key]);
+        };
     }
 }
