@@ -13,9 +13,19 @@ class FunctionArrayRandTest extends PHPUnit_Framework_TestCase
         $this->assertContains($input[$rand_keys[0]], $input);
         $this->assertContains($input[$rand_keys[1]], $input);
         $this->assertCount(2, $rand_keys);
-        $this->assertGreaterThanOrEqual(0, $rand_keys[0]);
-        $this->assertGreaterThanOrEqual(0, $rand_keys[1]);
-        $this->assertLessThanOrEqual(4, $rand_keys[0]);
-        $this->assertLessThanOrEqual(4, $rand_keys[1]);
+        $this->assertThat(
+            $rand_keys[0],
+            $this->logicalAnd(
+                $this->greaterThanOrEqual(0),
+                $this->lessThanOrEqual(4)
+            )
+        );
+        $this->assertThat(
+            $rand_keys[1],
+            $this->logicalAnd(
+                $this->greaterThanOrEqual(0),
+                $this->lessThanOrEqual(4)
+            )
+        );
     }
 }
