@@ -38,7 +38,7 @@ class FunctionDateDateSetTest extends PHPUnit_Framework_TestCase
     /**
      * @requires PHP 5.2
      */
-    public function testFunctionDateCreateRanges()
+    public function testFunctionDateDateSetRanges()
     {
         if (version_compare(phpversion(), '5.2.0', '>=') === true) {
             $date = new DateTime();
