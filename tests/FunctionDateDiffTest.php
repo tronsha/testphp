@@ -38,7 +38,7 @@ class FunctionDateDiffTest extends PHPUnit_Framework_TestCase
     }
 
     /**
-     * @requires PHP 5.2
+     * @requires PHP 5.3
      */
     public function testFunctionDateDiffComparison()
     {
