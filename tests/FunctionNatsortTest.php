@@ -26,6 +26,9 @@ class FunctionNatsortTest extends PHPUnit_Framework_TestCase
         }
     }
 
+   /** 
+    * @link https://bugs.php.net/bug.php?id=70770
+    */ 
     public function testFunctionNatsortZeroPadding()
     {
         if (version_compare(phpversion(), '5.2.10', '>=') === true) {
