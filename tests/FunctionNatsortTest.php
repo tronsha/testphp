@@ -34,7 +34,11 @@ class FunctionNatsortTest extends PHPUnit_Framework_TestCase
         if (version_compare(phpversion(), '5.2.10', '>=') === true) {
             $zeros = array('09', '8', '10', '009', '011', '0');
             natsort($zeros);
-            $this->expectOutputString("5 = 0\n1 = 8\n3 = 009\n0 = 09\n2 = 10\n4 = 011\n");
+            if (version_compare(phpversion(), '7.0.0-dev', '>=') === true) {
+                $this->expectOutputString("5 = 0\n1 = 8\n0 = 09\n3 = 009\n2 = 10\n4 = 011\n");
+            } else {
+                $this->expectOutputString("5 = 0\n1 = 8\n3 = 009\n0 = 09\n2 = 10\n4 = 011\n");
+            }
             foreach ($zeros as $key => $val) {
                 echo "$key = $val\n";
             }
